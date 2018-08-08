@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+<link rel="shortcut icon" href="../../../wp-content/themes/CASTheme/favicon.ico" />
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<!-- <link rel="stylesheet" type="text/css" media="all" href="http://classics.case.edu/wp-content/themes/CASTheme/style.css" /> -->
+<link rel="pingback" href="http://classics.case.edu/xmlrpc.php" />
+
+<link rel="alternate" type="application/rss+xml" title="Department of Classics &raquo; Abbreviations in Latin Inscriptions Comments Feed" href="feed/index.html" />
+<link rel='stylesheet' id='titillium-font-css'  href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700,900' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='../../../wp-content/themes/CASTheme/css/bootstrap.css%3Fver=2.2.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawesome-css'  href='http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-responsive-css'  href='../../../wp-content/themes/CASTheme/css/bootstrap-responsive.css%3Fver=2.2.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cas-bootstrap-override-css'  href='../../../wp-content/themes/CASTheme/css/cas-bootstrap-override.css%3Fver=4.0.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cas-layout-css'  href='../../../wp-content/themes/CASTheme/css/cas-layout.css%3Fver=4.0.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='megamenu-css'  href='../../../wp-content/themes/CASTheme/css/cas-megamenu.css%3Fver=4.0.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cas-blog-css'  href='../../../wp-content/themes/CASTheme/css/cas-blog.css%3Fver=3.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='slb_core-css'  href='../../../wp-content/plugins/simple-lightbox/client/css/app.css%3Fver=2.3.1.css' type='text/css' media='all' />
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery.js%3Fver=1.11.1'></script>
+<script type='text/javascript' src='../../../wp-includes/js/jquery/jquery-migrate.min.js%3Fver=1.2.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/CASTheme/js/bootstrap.js%3Fver=2.0.4'></script>
+<script type='text/javascript' src='../../../wp-content/themes/CASTheme/js/jquery.finger.min.js%3Fver=0.0.11'></script>
+<script type='text/javascript' src='http://classics.case.edu/wp-content/themes/CASTheme/js/jquery.jpanelmenu.js?ver=4.0.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/CASTheme/js/megamenu.js%3Fver=4.0.1'></script>
+<script type='text/javascript' src='../../../wp-content/themes/CASTheme/js/retina.js%3Fver=0.0.2'></script>
+<script type='text/javascript' src='../../../wp-content/themes/CASTheme/inc/google-api-php-client/src%3Fver=4.0.1.html'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://classics.case.edu/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://classics.case.edu/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.0.1" />
+<link rel='canonical' href='index.html' />
+<link rel='shortlink' href='http://classics.case.edu/?p=403' />
+<style type='text/css'>img#wpstats{display:none}</style>
+<script type="text/javascript">
+
+adjustSiteTitle = function() {
+	var topBarContainerWidth = jQuery("#cas-top-bar .container .row").width();	
+	var siteTitleObject = jQuery("h1.topBarDepartmentName");
+	var siteTitleLength = siteTitleObject.html().length;
+
+
+	if (topBarContainerWidth == 1200) {
+		if (siteTitleLength > 50) {
+			jQuery("h1.topBarDepartmentName").css("font-size", "28px");
+		}
+	}
+	if (topBarContainerWidth == 960) {
+		if (siteTitleLength > 50) {
+			jQuery("h1.topBarDepartmentName").css("font-size", "22px");
+		}
+	}
+	if (topBarContainerWidth == 744) {
+			jQuery("h1.topBarDepartmentName").css("font-size", "16px");
+	}
+}
+
+
+
+jQuery(document).ready(function($){
+
+	adjustSiteTitle();
+		
+	$("#cas-top-slider-container").click(function(){
+		$("#cas-top-slider-panel").slideToggle("slow");
+		$(this).toggleClass("active");
+		caretClassName = $("#cas-slider-icon").attr("class");
+		if (caretClassName == "icon-caret-down") {
+			$("#cas-slider-icon").addClass("icon-caret-up");
+			$("#cas-slider-icon").removeClass("icon-caret-down");
+		}
+		else {
+			$("#cas-slider-icon").addClass("icon-caret-down");
+			$("#cas-slider-icon").removeClass("icon-caret-up");;
+		}
+	});
+	
+	$("#cas-mobile-menu-slider-toggle").click(function(){
+		$("#cas-mobile-department-menu-accordian").slideToggle(10);
+	});
+	
+	$("#search-tab").click(function(){
+		$("#top-bar-search-slider").slideToggle(1);
+		$(this).toggleClass("active");
+		$("#top-bar-search-slider-input").val("");
+		$("#top-bar-search-slider-input").focus();
+	});
+	
+	$('#cwru-tabs-dropdown-toggle').mouseenter(function(){ 
+		$('#cwru-tabs-dropdown-toggle').dropdown('toggle'); 
+		var dropdownPoller = setInterval(function() {
+			if ($('#cwru-tabs-dropdown-toggle').is(':hover') || $('#cwru-tabs-dropdown').is(':hover')) {
+				
+			}
+			else {
+				$('#cwru-tabs-dropdown-toggle').parent().removeClass('open'); 
+				clearInterval(dropdownPoller);
+			}
+		}, 500);
+	});
+	
+});
+
+// Handle window resizes
+jQuery(window).resize(function() {
+	// Adjust Menu
+		
+	// Adjust site name
+	adjustSiteTitle();
+});
+
+
+
+</script>
+
+<title>Abbreviations in Latin Inscriptions | Department of Classics</title>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49145005-1', 'case.edu');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+		<div id="cas-top-slider-panel" class="hidden-phone">
+			<div class="container">
+				<div class="row">
+					<div class="span6">
+						<h2 href="http://artsci.cas.edu"><College of Arts and Sciences</a></h2>
+						<div class="row">
+							<div class="span3">
+								<a href="http://artsci.case.edu">College Home</a><br />
+								<a href="http://www.case.edu/artsci/about.html">About the College</a><br />
+								<a href="http://www.case.edu/artsci/history.html">History</a><br />
+								<a href="http://www.case.edu/artsci/dean.html">About the Dean</a><br />
+								<a href="http://www.case.edu/artsci/staff.html">Dean's Office</a><br />
+								<a href="http://www.case.edu/artsci/dept_chairs.html">Department Chairs</a><br />
+								<a href="http://www.case.edu/artsci/dept_admin.html">Department Administrators</a><br />
+							</div>
+							<div class="span3">
+								<a href="http://artsci.case.edu/news/">College News and Events</a><br />
+								<a href="http://www.case.edu/artsci/development/giving.html">Supporting the College</a><br />
+								<a href="http://www.case.edu/artsci/alumni/index.html">Alumni and Friends</a><br />
+								<a href="http://www.case.edu/artsci/contact.html">Contact the College</a><br />
+							</div>
+						</div>
+					</div>
+
+					<div class="span6">
+						<h2>Academic Departments</h2>
+						<div class="row">
+							<div class="span3">
+								<a href="http://www.case.edu/artsci/anth">Anthropology</a><br />
+								<a href="http://www.case.edu/artsci/arth/arth.html">Art History and Art</a><br />
+								<a href="http://astronomy.case.edu/">Astronomy</a><br />
+								<a href="http://www.case.edu/artsci/biol/">Biology</a><br />
+								<a href="http://www.case.edu/artsci/chem/">Chemistry</a><br />
+								<a href="http://classics.case.edu/">Classics</a><br />
+								<a href="http://www.case.edu/artsci/cogs/">Cognitive Science</a><br />
+								<a href="http://dance.case.edu/">Dance</a><br />
+								<a href="http://geology.case.edu/">Earth, Environmental and Planetary Sciences</a><br />
+								<a href="http://www.case.edu/artsci/engl/">English</a><br />
+								<a href="http://history.case.edu/">History</a>
+							</div>
+							<div class="span3">
+								<a href="http://www.case.edu/artsci/math/">Mathematics, Applied Mathematics and Statistics</a><br />
+								<a href="http://www.case.edu/artsci/dmll/">Modern Languages and Literatures</a><br />
+								<a href="http://music.case.edu/">Music</a><br />
+								<a href="http://www.case.edu/artsci/phil/">Philosophy</a><br />
+								<a href="http://physics.case.edu/">Physics</a><br />
+								<a href="http://politicalscience.case.edu/">Political Science</a><br />
+								<a href="http://www.case.edu/artsci/psychological-sciences/">Psychological Sciences</a><br />
+								<a href="http://www.case.edu/artsci/rlgn/">Religious Studies</a><br />
+								<a href="http://www.case.edu/artsci/soci/">Sociology</a><br />
+								<a href="http://theater.case.edu/">Theater</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+   
+    <!-- header -->
+    <!-- content -->
+    <!-- footer -->
+
+</div><!-- page -->
+	
+	<div id="cas-top-bar" class="hidden-phone">
+			<div class="container headerFeatures">
+				<div class="row">
+					<div class="span12">
+						<div id="cas-top-bar-tabs">
+							<div id="cwru-tabs" class="dropdown">
+								<a id='cwru-tabs-dropdown-toggle' href="index.html#">
+									<i class="icon-reorder"></i> CWRU Links
+								</a>
+								<ul id="cwru-tabs-dropdown" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+  								<li><a href="http://www.case.edu">CWRU Home</a></li>
+  								<li><a href="http://case.edu/stage/admissions/">Apply</a></li>
+  								<li><a href="http://www.case.edu/visit/">Visit</a></li>
+  								<li><a href="http://giving.case.edu/s/1526/index.aspx">Give</a></li>
+ 							 </ul>
+							</div>
+							<div id="cas-top-slider-container" class="college-tab">
+								College of Arts and Sciences <i style="margin-left: 5px;" id="cas-slider-icon" class="icon-caret-down"></i>
+							</div>
+							<div id="search-tab">
+								<i class="icon-search"></i>
+							</div>
+						</div>
+                        						<img id="cwruCASLogo" src="../../../wp-content/themes/CASTheme/images/cas-logo-header.png" />
+							<h1 class="topBarDepartmentName">							Department of Classics							</h1>
+					</div>
+					<div id="top-bar-search-slider">
+						<form id="cse-search-box" action="http://google.com/cse">
+							<input type="hidden" name="cx" value="015686301297374177681:uy8_du3q1dq" />
+							<input type="hidden" name="ie" value="UTF-8" />
+							<input type="text" name="q" id="top-bar-search-slider-input">
+							<button type="submit" name="sa" value="Search">Search</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>		<div id="cas-department-menu" class="hidden-phone">
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						
+<ul class="department-mega-menu">
+													<li class="menu-item menu-item-type-custom menu-item-object-custom">
+														<a title="Home" href="http://classics.case.edu" class="drop">
+															<i class="icon-home"></i>
+														</a>
+													</li>
+													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-77"><a href="http://classics.case.edu/about-us/" class="drop" >About Us</a>
+<div class="dropdown_2columns"><div class="col_2" style="width: 95%;"><ul>	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a href="http://classics.case.edu/about-us/contact/">Contact Us</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a href="http://classics.case.edu/about-us/resources/">Resources</a></li>
+</ul></div></div>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="http://classics.case.edu/people/" class="drop" >People</a></li>
+<li>
+	<a class="drop">Academic Programs</a>	<div class='dropdown_4columns mega-dropdown'><div class="col_2" style="width: 48%;"><h2>Undergraduate</h2><ul><li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-107"><a href="http://classics.case.edu/undergraduate-program/">Introduction to Undergraduate Program</a>
+<ul class="sub-menu">
+	<li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="http://classics.case.edu/undergraduate-program/bachelor-of-arts-in-classics/">Bachelor of Arts in Classics</a></li>
+	<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="http://classics.case.edu/undergraduate-program/minor-in-classics/">Minor in Classics</a></li>
+	<li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-135"><a href="http://classics.case.edu/undergraduate-program/admission-requirements/">Admission Requirements</a></li>
+	<li id="menu-item-1293" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1293"><a href="http://classics.case.edu/undergraduate-program/tuition-and-financial-aid/">Tuition and Financial Aid</a></li>
+	<li id="menu-item-1683" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1683"><a href="http://classics.case.edu/study-abroad-2015/">Study Abroad with Classics 2015</a></li>
+</ul>
+</li>
+</ul></div><div class="col_2" style="width: 48%;"><h2>Graduate</h2><ul><li id="menu-item-113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-113"><a href="http://classics.case.edu/graduate-certificate-program/">Graduate Certificate Program</a>
+<ul class="sub-menu">
+	<li id="menu-item-121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-121"><a href="http://classics.case.edu/graduate-certificate-program/admission-requirements/">Admission Requirements</a></li>
+	<li id="menu-item-123" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-123"><a href="http://classics.case.edu/graduate-certificate-program/completion-requirements/">Completion Requirements</a></li>
+	<li id="menu-item-115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="http://classics.case.edu/graduate-certificate-program/courses/">Courses</a></li>
+	<li id="menu-item-117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-117"><a href="http://classics.case.edu/tuition-and-financial-aid/">Tuition and Financial Aid</a></li>
+	<li id="menu-item-119" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119"><a href="http://classics.case.edu/graduate-certificate-program/contact-information/">Contact Information</a></li>
+</ul>
+</li>
+</ul></div></div></li>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1319"><a href="index.html#" class="drop" >Courses</a>
+<div class="dropdown_2columns"><div class="col_2" style="width: 95%;"><ul>	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1660"><a href="http://classics.case.edu/courses/classics-department-courses-spring-2015/">Classics Department Courses Spring 2015</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1341"><a href="http://classics.case.edu/courses/coursesfall-2014/">Classics Department Courses Fall 2014</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1317"><a href="http://classics.case.edu/courses/spring-2014/">Classics Department Courses: Spring 2014</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1315"><a href="http://classics.case.edu/courses/fall-2013/">Classics Department Courses: Fall 2013</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1313"><a href="http://classics.case.edu/courses/classics-courses/">Classics Courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1311"><a href="http://classics.case.edu/courses/latin-courses/">Latin Courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1309"><a href="http://classics.case.edu/courses/greek-courses/">Greek Courses</a></li>
+</ul></div></div>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1001"><a href="http://classics.case.edu/category/news/" class="drop" >News and Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1283"><a href="http://classics.case.edu/scholarships/" class="drop" >Scholarships</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-985"><a href="http://classics.case.edu/support/" class="drop" >Support</a>
+<div class="dropdown_2columns"><div class="col_2" style="width: 95%;"><ul>	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-987"><a href="http://classics.case.edu/support/how-to-give/">How to Give</a></li>
+</ul></div></div>
+</li>
+<li>
+	<a class="drop">Information for ...</a>	<div class='dropdown_6columns mega-dropdown'><div class="col_2" style="width: 31%;"><h2>Prospective Students</h2><ul><li id="menu-item-1061" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1061"><a href="http://classics.case.edu/undergraduate-program/">Undergraduate Program</a></li>
+<li id="menu-item-1059" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1059"><a href="http://classics.case.edu/graduate-certificate-program/">Graduate Program</a></li>
+</ul></div><div class="col_2" style="width: 31%;"><h2>Current Students</h2><ul><li id="menu-item-1069" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1069"><a href="http://classics.case.edu/undergraduate-program/">Undergraduate Program</a></li>
+<li id="menu-item-1067" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1067"><a href="http://classics.case.edu/graduate-certificate-program/">Graduate Program</a></li>
+<li id="menu-item-1722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1722"><a href="http://classics.case.edu/courses/classics-department-courses-spring-2015/">Classics Department Courses Spring 2015</a></li>
+<li id="menu-item-1723" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1723"><a href="http://classics.case.edu/courses/coursesfall-2014/">Classics Department Courses Fall 2014</a></li>
+<li id="menu-item-1081" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1081"><a href="http://classics.case.edu/people/">People</a></li>
+<li id="menu-item-1079" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1079"><a href="http://classics.case.edu/category/news/">News and Events</a></li>
+<li id="menu-item-1807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="http://classics.case.edu/what-can-i-do-with-my-classics-major/">What Can I Do With My Classics Major?</a></li>
+</ul></div><div class="col_2" style="width: 31%;"><h2>Alumni and Friends</h2><ul><li id="menu-item-1073" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1073"><a href="http://classics.case.edu/support/">Support</a></li>
+<li id="menu-item-1077" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1077"><a href="http://classics.case.edu/category/news/">News and Events</a></li>
+</ul></div></div></li>
+</li>
+</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="cas-mobile-top-bar" class="visible-phone">
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						 						<img id="cwruCASLogo" src="../../../wp-content/themes/CASTheme/images/cas-logo-header.png" />
+						<h1>Department of Classics</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="cas-mobile-menu-slider-toggle" class="visible-phone college-tab">
+			<i class="icon-reorder"></i> Navigation + <i class="icon-search"></i> Search
+		</div>
+		
+		<div id="cas-mobile-department-menu" class="visible-phone">
+ 						<div class="accordion" id="cas-mobile-department-menu-accordian">
+				<div id="mobile-nav-search">
+					<form action="http://google.com/cse">
+						<div class="input-append">
+							<input type="hidden" id="footer-search-id" name="cx" value="015686301297374177681:uy8_du3q1dq" />
+							<input type="hidden" name="ie" value="UTF-8" />
+							<div class="input-append">
+								<input class="span4" name="q" id="appendedInputButton" type="text">
+								<button class="btn" type="submit">Search</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="accordion" id="accordion2">
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a class="accordion-toggle" doubletap-url="http://classics.case.edu/about-us/" data-toggle="collapse" data-parent="#accordion2" href="index.html#collapseOne">
+										About Us
+									</a>
+								</div>
+								<div id="collapseOne" class="accordion-body mobile-menu-dropdown collapse">
+									<div class="accordion-inner">
+										<a href="http://classics.case.edu/about-us/contact/">Contact Us</a><br /><a href="http://classics.case.edu/about-us/resources/">Resources</a><br />
+									</div>
+								</div>
+							</div>
+						
+
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a href="http://classics.case.edu/people/" class="accordion-toggle" >
+										People
+									</a>
+								</div>
+							</div>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="index.html#collapseThree">
+							Academic Programs
+						</a>
+					</div>
+					<div id="collapseThree" class="accordion-body collapse mobile-menu-dropdown">
+						<div class="accordion-inner mobile-mega-dropdown-contents">
+							<div><h2>Undergraduate</h2><ul id="menu-undergraduate-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-107"><a href="http://classics.case.edu/undergraduate-program/">Introduction to Undergraduate Program</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="http://classics.case.edu/undergraduate-program/bachelor-of-arts-in-classics/">Bachelor of Arts in Classics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="http://classics.case.edu/undergraduate-program/minor-in-classics/">Minor in Classics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-135"><a href="http://classics.case.edu/undergraduate-program/admission-requirements/">Admission Requirements</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1293"><a href="http://classics.case.edu/undergraduate-program/tuition-and-financial-aid/">Tuition and Financial Aid</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1683"><a href="http://classics.case.edu/study-abroad-2015/">Study Abroad with Classics 2015</a></li>
+</ul>
+</li>
+</ul></div><div><h2>Graduate</h2><ul id="menu-graduate-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-113"><a href="http://classics.case.edu/graduate-certificate-program/">Graduate Certificate Program</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-121"><a href="http://classics.case.edu/graduate-certificate-program/admission-requirements/">Admission Requirements</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-123"><a href="http://classics.case.edu/graduate-certificate-program/completion-requirements/">Completion Requirements</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="http://classics.case.edu/graduate-certificate-program/courses/">Courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-117"><a href="http://classics.case.edu/tuition-and-financial-aid/">Tuition and Financial Aid</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119"><a href="http://classics.case.edu/graduate-certificate-program/contact-information/">Contact Information</a></li>
+</ul>
+</li>
+</ul></div>
+						</div>
+					</div>
+				</div>
+			
+
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a class="accordion-toggle" doubletap-url="#" data-toggle="collapse" data-parent="#accordion2" href="index.html#collapseFour">
+										Courses
+									</a>
+								</div>
+								<div id="collapseFour" class="accordion-body mobile-menu-dropdown collapse">
+									<div class="accordion-inner">
+										<a href="http://classics.case.edu/courses/classics-department-courses-spring-2015/">Classics Department Courses Spring 2015</a><br /><a href="http://classics.case.edu/courses/coursesfall-2014/">Classics Department Courses Fall 2014</a><br /><a href="http://classics.case.edu/courses/spring-2014/">Classics Department Courses: Spring 2014</a><br /><a href="http://classics.case.edu/courses/fall-2013/">Classics Department Courses: Fall 2013</a><br /><a href="http://classics.case.edu/courses/classics-courses/">Classics Courses</a><br /><a href="http://classics.case.edu/courses/latin-courses/">Latin Courses</a><br /><a href="http://classics.case.edu/courses/greek-courses/">Greek Courses</a><br />
+									</div>
+								</div>
+							</div>
+						
+
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a href="http://classics.case.edu/category/news/" class="accordion-toggle" >
+										News and Events
+									</a>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a href="http://classics.case.edu/scholarships/" class="accordion-toggle" >
+										Scholarships
+									</a>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a class="accordion-toggle" doubletap-url="http://classics.case.edu/support/" data-toggle="collapse" data-parent="#accordion2" href="index.html#collapseSeven">
+										Support
+									</a>
+								</div>
+								<div id="collapseSeven" class="accordion-body mobile-menu-dropdown collapse">
+									<div class="accordion-inner">
+										<a href="http://classics.case.edu/support/how-to-give/">How to Give</a><br />
+									</div>
+								</div>
+							</div>
+						
+
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="index.html#collapseEight">
+							Information for ...
+						</a>
+					</div>
+					<div id="collapseEight" class="accordion-body collapse mobile-menu-dropdown">
+						<div class="accordion-inner mobile-mega-dropdown-contents">
+							<div><h2>Prospective Students</h2><ul id="menu-prospective-students-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1061"><a href="http://classics.case.edu/undergraduate-program/">Undergraduate Program</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1059"><a href="http://classics.case.edu/graduate-certificate-program/">Graduate Program</a></li>
+</ul></div><div><h2>Current Students</h2><ul id="menu-current-students-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1069"><a href="http://classics.case.edu/undergraduate-program/">Undergraduate Program</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1067"><a href="http://classics.case.edu/graduate-certificate-program/">Graduate Program</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1722"><a href="http://classics.case.edu/courses/classics-department-courses-spring-2015/">Classics Department Courses Spring 2015</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1723"><a href="http://classics.case.edu/courses/coursesfall-2014/">Classics Department Courses Fall 2014</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1081"><a href="http://classics.case.edu/people/">People</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1079"><a href="http://classics.case.edu/category/news/">News and Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1807"><a href="http://classics.case.edu/what-can-i-do-with-my-classics-major/">What Can I Do With My Classics Major?</a></li>
+</ul></div><div><h2>Alumni and Friends</h2><ul id="menu-alumni-and-friends-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1073"><a href="http://classics.case.edu/support/">Support</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1077"><a href="http://classics.case.edu/category/news/">News and Events</a></li>
+</ul></div>
+						</div>
+					</div>
+				</div>
+			
+</div>			</div>
+		</div>
+
+
+			<!-- Breadcrumbs -->
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+
+						<div id="cas-breadcrumbs"><a href="http://classics.case.edu">Home</a> / <a href="http://classics.case.edu/asgle/">The American Society of Greek and Latin Epigraphy</a> / <a href="http://classics.case.edu/asgle/bookshelf/">The Epigrapher&#8217;s Bookshelf</a> / Abbreviations in Latin Inscriptions</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Headline -->
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<h1 class="headline">Abbreviations in Latin Inscriptions</h1>
+				</div>
+			</div>
+		</div>
+
+		<!-- Body -->
+		<div class="container">
+			<div class="row">
+								<div class="span12">
+					<p><a href="../../../files/2013/12/asgle-logo.gif" data-slb-group="403" data-slb-active="1" data-slb-internal="0"><img class="alignnone size-full wp-image-245" alt="ASGLE Logo" src="../../../files/2013/12/asgle-logo.gif" width="110" height="142" /></a>  <a href="../../../files/2013/12/asgle-title.gif" data-slb-group="403" data-slb-active="1" data-slb-internal="0"><img class="alignnone size-full wp-image-247" alt="asgle-title" src="../../../files/2013/12/asgle-title.gif" width="576" height="144" /></a></p>
+<p>Conceived and compiled by Tom Elliott (<a href="mailto:tom_elliott@unc.edu?subject=ASGLE">tom_elliott@unc.edu</a>)<br />
+for the ASGLE web site</p>
+<p>Copyright 1998 by Tom Elliott</p>
+<p>These lists may be used, reproduced and distributed for any academic purpose that does not generate profit so long as the title and authorship information, and the copyright notice, remain attached.</p>
+<p>This page provides access to a series of lists containing abbreviations found in Latin inscriptions. The series represents a new compilation of such abbreviations, assembled from digital texts of all Latin inscriptions published in <i xml:lang="fr">L&#8217;Année Épigraphique</i> between 1888 and 1993. For a description of the methods used to compile these lists (and the limitations resulting therefrom) please see the <a href="index.html#methods">Methods and Limitations</a> section, below.</p>
+<p>There are two sets of lists, one containing common abbreviations (those occurring more than 10 times in the inscriptions sampled), and another containing all the abbreviations that occur in the inscriptions sampled. Please note the file sizes listed next to each link; the complete listings in particular are quite large and may take a significant amount of time to download and format for viewing.</p>
+<p>&nbsp;</p>
+<div id="common">
+<h3>Common Abbreviations in Latin Inscriptions Published in <i>AE</i> 1888-1993</h3>
+<p>Click on the letter to view the list:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Initial letter of abbreviation</td>
+<td>Number of abbreviations</td>
+<td>File size (in KB)</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter A" href="popa/index.html">A</a></td>
+<td>25</td>
+<td>9</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter B" href="popb/index.html">B</a></td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter C" href="popc/index.html">C</a></td>
+<td>26</td>
+<td>12</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter D" href="popd/index.html">D</a></td>
+<td>14</td>
+<td>7</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter E" href="pope/index.html">E</a></td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter F" href="popf/index.html">F</a></td>
+<td>16</td>
+<td>7</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter G" href="popg/index.html">G</a></td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter H" href="poph/index.html">H</a></td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter I" href="popi/index.html">I</a></td>
+<td>8</td>
+<td>3</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter K" href="popk/index.html">K</a></td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter L" href="popl/index.html">L</a></td>
+<td>12</td>
+<td>5</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter M" href="popm/index.html">M</a></td>
+<td>22</td>
+<td>10</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter N" href="popn/index.html">N</a></td>
+<td>8</td>
+<td>3</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter O" href="popo/index.html">O</a></td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter P" href="popp/index.html">P</a></td>
+<td>38</td>
+<td>16</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter Q" href="popq/index.html">Q</a></td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter R" href="popr/index.html">R</a></td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter S" href="pops/index.html">S</a></td>
+<td>21</td>
+<td>9</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter T" href="popt/index.html">T</a></td>
+<td>8</td>
+<td>4</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter U" href="popu/index.html">U</a></td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td><a title="Common Abbreviations in Latin Inscriptions Beginning with the Letter V" href="popv/index.html">V</a></td>
+<td>16</td>
+<td>6</td>
+</tr>
+<tr>
+<td>X (no list)</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>Z (no list)</td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</div>
+<div id="all">
+<h3>All Abbreviations in Latin Inscriptions Published in <i>AE</i> 1888-1993</h3>
+<p>Click on the letter to view the list:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>Initial letter of abbreviation</td>
+<td>Number of abbreviations</td>
+<td>File size (in KB)</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter A" href="norefa/index.html">A</a></td>
+<td>3304</td>
+<td>304</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter B" href="norefb/index.html">B</a></td>
+<td>704</td>
+<td>62</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter C" href="norefc/index.html">C</a></td>
+<td>3715</td>
+<td>322</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter D" href="norefd/index.html">D</a></td>
+<td>2139</td>
+<td>196</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter E" href="norefe/index.html">E</a></td>
+<td>683</td>
+<td>55</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter F" href="noreff/index.html">F</a></td>
+<td>1744</td>
+<td>157</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter G" href="norefg/index.html">G</a></td>
+<td>548</td>
+<td>47</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter H" href="norefh/index.html">H</a></td>
+<td>804</td>
+<td>73</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter I" href="norefi/index.html">I</a></td>
+<td>1739</td>
+<td>157</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter K" href="norefk/index.html">K</a></td>
+<td>478</td>
+<td>43</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter L" href="norefl/index.html">L</a></td>
+<td>1555</td>
+<td>139</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter M" href="norefm/index.html">M</a></td>
+<td>2139</td>
+<td>187</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter N" href="http://classicsstaging.case.edu/norefn/">N</a></td>
+<td>811</td>
+<td>69</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter O" href="norefo/index.html">O</a></td>
+<td>483</td>
+<td>39</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter P" href="norefp/index.html">P</a></td>
+<td>3479</td>
+<td>320</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter Q" href="norefq/index.html">Q</a></td>
+<td>652</td>
+<td>59</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter R" href="norefr/index.html">R</a></td>
+<td>549</td>
+<td>46</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter S" href="norefs/index.html">S</a></td>
+<td>2368</td>
+<td>201</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter T" href="noreft/index.html">T</a></td>
+<td>1388</td>
+<td>118</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter U" href="norefu/index.html">U</a></td>
+<td>274</td>
+<td>22</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter V" href="norefv/index.html">V</a></td>
+<td>1583</td>
+<td>146</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter X" href="norefx/index.html">X</a></td>
+<td>56</td>
+<td>6</td>
+</tr>
+<tr>
+<td><a title="Abbreviations in Latin Inscriptions Beginning with the Letter Z" href="norefz/index.html">Z</a></td>
+<td>19</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</div>
+<div id="methods">
+<h3>Method and Limitations</h3>
+<div id="definition">
+<h4>Definition of &#8216;abbreviation&#8217;</h4>
+<p>Two types of abbreviations are represented in the lists above. First, there are those Latin words that were abbreviated in epigraphical texts by the omission of one or more letters, often at the end, although sometimes in the middle or in several places in the word. Second, there are those phrases that, in the engraving, consist of a series of words that are each abbreviated in the manner just described. Both these meta-abbreviations and the individual abbreviated words they contain are recorded in the lists. For example, if the meta-abbreviation VSLM = <i>v(otum) s(olvit) l(ibens) m(erito)</i> was encountered in a text, the meta-abbreviation VSLM will have an entry in the &#8220;V&#8221; list and each word will have its own entry in the appropriate list (i.e., V = <i>v(otum)</i> in the &#8220;V&#8221; list, S = <i>s(olvit)</i> in the &#8220;S&#8221; list, and so on). See the <a href="http://classics.case.edu/asgle/abbrev/latin/#limitations">Limitations</a> section below for some exceptions to (and consequences of ) these rules.</p>
+</div>
+<div id="source">
+<h4></h4>
+<h4>Data source</h4>
+<p>The abbreviations contained in these lists were identified using the digital texts of all Latin inscriptions published in <i>AE</i> 1888-1993 available from Dr. Manfred Clauss and the Ancient History Seminar at the <i>Johann Wolfgang Goethe-Universität</i> in <i>Frankfurt am Main</i>, Germany ( <a href="http://www.rz.uni-frankfurt.de/~clauss/">http://www.rz.uni-frankfurt.de/~clauss/</a> ).</p>
+</div>
+<div id="identification">
+<h4></h4>
+<h4>Identification and classification</h4>
+<p>Abbreviations were identified in the data set using software written expressly for the purpose. The following algorithm was used:</p>
+<ul>
+<li>Read each data file sequentially.</li>
+<li>If a word contains a parenthesis, mark it as an abbreviation. If the preceding word was marked as an abbreviation add this one to all uninterrupted preceding abbreviations to build the meta-abbreviation.</li>
+<li>If a word does not contain a parenthesis or if the end of a text has been reached, and if a meta-abbreviation is being recorded, conclude it and store it with the single-word abbreviations.</li>
+<li>Once all data files have been parsed, review the abbreviations identified, group and sort them, reconstruct the inscribed letters by removing all parentheses and their content, strip out all sigla except parentheses, and store the resulting data with formatting in HTML files.</li>
+<li>If an abbreviation (i.e., a particular sequence of inscribed letters that corresponds to any of a number of possible abbreviated words or phrases) occurs more than 10 times in the data, store its description in both the common and complete lists. If it occurs less than 10 times, store it only in the &#8220;complete&#8221; list.</li>
+</ul>
+</div>
+<div id="limitations">
+<h4></h4>
+<h4>Limitations</h4>
+<p>Several consequences of the identification and classification approach outlined above can be observed in the data:</p>
+<ul>
+<li>The identification of an abbreviation as an abbreviation, and its supplementation to the corresponding Latin word or phrase, is dependent entirely upon the decisions of the original editor and upon the accuracy of the digital text. No independent attempt has been made to verify the accuracy of the texts or to explore other options for abbreviation supplements.</li>
+<li>Common short abbreviated phrases that are often incorporated into longer abbreviated phrases may not be identified separately in the common lists. For example, the abbreviation BM = <i>b(ene) m(erenti)</i> occurs 817 times in the data, but it almost always occurs as part of a larger phrase (e.g., BMP = <i>b(ene) m(erenti) p(osuit)</i>, CGBM = <i>c(oniu)g(i) b(ene) m(erenti)</i>). Because of this tendency, BM occurs by itself less than 10 times in the data. Because the algorithm outlined above is not capable of recognizing meta-abbreviations within larger meta-abbreviations, the meta-abbreviation BM does not appear in the common list, it only appears in the complete list (and that only because it does appear by itself at least once). Moreover, there is so much variation in the number of meta-abbreviations containing BM that each of these occurs less than 10 times. The result: no meta-abbreviation containing BM appears in the B common list at all. An enhanced version of the processing software is planned which will reprocess the meta-abbreviation data looking for sub-abbreviations that match other meta-abbreviations identified in the first pass, but for the present, this shortcoming constitutes the greatest limitation for anyone who might wish to use the common lists in instruction.</li>
+<li>Because the algorithm identifies abbreviations solely on the basis of the appearance of parentheses in the source data, misspellings (and variant spellings) &#8220;corrected&#8221; by an editor are recorded amongst the abbreviations. This classification occurs because, in the Frankfurt data, parentheses are used to bracket both supplements for abbreviations and supplements for accidentally omitted characters, often set off in other editions by different sigla: &lt; and &gt;. A particular misspelling or character omission in a particular word is by nature infrequent, therefore none of these have made their way into the common lists. They do make some prominent appearances in the complete lists, but it is hoped that their presence there will be at least as instructive as it is disruptive.</li>
+<li>No pedagogical decisions have been made concerning the content of the common lists. They are not lists of abbreviations encountered most often in inscriptions taught in university courses. They consist simply of all abbreviations occurring over 10 times in the source data. Nonetheless, comparison with lists in the various epigraphical handbooks shows a significant degree of commonality. One feature that separates these common lists from those in the handbooks is the fact that all recorded supplements for a given abbreviation (regardless of a given supplement&#8217;s frequency) are included in the common list. Although this may represent a challenge for students, it also serves as a cautionary note concerning the power and perils of editorship.</li>
+</ul>
+</div>
+</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="navigation">
+		</div>
+<div id="cas-footer">
+	<div class="container">
+		<div class="row">
+			<div class="span3" style="border-right: 1px solid #aaa; margin-right: -1px;">
+				<h1>Department of Classics</h1>
+				<small>&copy; 2014 <a href="http://www.cwru.edu">case western reserve university</a></small>
+			</div>
+
+			<div class="span3">
+				<h2>Search</h2>
+				<form id="footer-search-form" action="http://google.com/cse">
+					<div class="search-area">
+						<div class="input-append">
+							
+							<input type="hidden" id="footer-search-id" name="cx" value="015686301297374177681:uy8_du3q1dq" />
+							<input type="hidden" name="ie" value="UTF-8" />
+							<div class="input-append">
+ 								<input class="span2" name="q" id="appendedInputButton" type="text">
+  							<button class="btn" type="submit">Search</button>
+							</div>
+							<div class="btn-group">
+															</div>
+						</div>
+					</div>
+				</form>
+			</div>
+						<div class="span2">
+				<h2>Contact</h2>
+				<p class="contact-info">
+					Mather House Suite 111</br>
+11201 Euclid Avenue</br>
+Cleveland, OH 44106-7111</br></br>
+216.368.2348					<br />
+										<br />
+					<a href="mailto:"></a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201449'></script>
+<script type='text/javascript' src='../../../wp-content/plugins/simple-lightbox/client/js/prod/lib.core.js%3Fver=2.3.1'></script>
+<script type='text/javascript' src='../../../wp-content/plugins/simple-lightbox/client/js/prod/lib.view.js%3Fver=2.3.1'></script>
+<script type='text/javascript' src='../../../wp-content/plugins/simple-lightbox/themes/baseline/js/prod/client.js%3Fver=2.3.1'></script>
+<script type='text/javascript' src='../../../wp-content/plugins/simple-lightbox/themes/default/js/prod/client.js%3Fver=2.3.1'></script>
+<script type='text/javascript' src='../../../wp-content/plugins/simple-lightbox/template-tags/item/js/prod/tag.item.js%3Fver=2.3.1'></script>
+<script type='text/javascript' src='../../../wp-content/plugins/simple-lightbox/template-tags/ui/js/prod/tag.ui.js%3Fver=2.3.1'></script>
+<script type='text/javascript' src='../../../wp-content/plugins/simple-lightbox/content-handlers/image/js/prod/handler.image.js%3Fver=2.3.1'></script>
+<script type="text/javascript" id="slb_footer">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB && SLB.has_child('View.init') ) { SLB.View.init({"ui_autofit":true,"ui_animate":true,"slideshow_autostart":true,"slideshow_duration":"6","group_loop":true,"ui_overlay_opacity":"0.8","ui_title_default":false,"theme_default":"slb_default","ui_labels":{"loading":"Loading","close":"Close","nav_next":"Next","nav_prev":"Previous","slideshow_start":"Start slideshow","slideshow_stop":"Stop slideshow","group_status":"Item %current% of %total%"}}); }
+if ( !!window.SLB && SLB.has_child('View.assets') ) { {$.extend(SLB.View.assets, {"http:\/\/classics.case.edu\/files\/2013\/12\/asgle-logo.gif":{"id":245,"_entries":["\/files\/2013\/12\/asgle-logo.gif"],"type":"image","source":"http:\/\/classics.case.edu\/files\/2013\/12\/asgle-logo.gif","internal":true,"sizes":{"news-thumb":{"file":"asgle-logo-100x129.gif","width":100,"height":129,"mime-type":"image\/gif"},"original":{"file":"2013\/12\/asgle-logo.gif","width":110,"height":142}},"image_meta":{"aperture":0,"credit":"","camera":"","caption":"","created_timestamp":0,"copyright":"","focal_length":0,"iso":0,"shutter_speed":0,"title":""},"description":"","title":"ASGLE Logo","caption":""},"http:\/\/classics.case.edu\/files\/2013\/12\/asgle-title.gif":{"id":247,"_entries":["\/files\/2013\/12\/asgle-title.gif"],"type":"image","source":"http:\/\/classics.case.edu\/files\/2013\/12\/asgle-title.gif","internal":true,"sizes":{"thumbnail":{"file":"asgle-title-150x144.gif","width":150,"height":144,"mime-type":"image\/gif"},"medium":{"file":"asgle-title-300x75.gif","width":300,"height":75,"mime-type":"image\/gif"},"post-thumbnail":{"file":"asgle-title-520x144.gif","width":520,"height":144,"mime-type":"image\/gif"},"highlight-thumb":{"file":"asgle-title-500x125.gif","width":500,"height":125,"mime-type":"image\/gif"},"news-thumb":{"file":"asgle-title-100x25.gif","width":100,"height":25,"mime-type":"image\/gif"},"original":{"file":"2013\/12\/asgle-title.gif","width":576,"height":144}},"image_meta":{"aperture":0,"credit":"","camera":"","caption":"","created_timestamp":0,"copyright":"","focal_length":0,"iso":0,"shutter_speed":0,"title":""},"description":"","title":"asgle-title","caption":""},"\/files\/2013\/12\/asgle-logo.gif":{"_parent":"http:\/\/classics.case.edu\/files\/2013\/12\/asgle-logo.gif"},"\/files\/2013\/12\/asgle-title.gif":{"_parent":"http:\/\/classics.case.edu\/files\/2013\/12\/asgle-title.gif"}});} }
+/* THM */
+if ( !!window.SLB && SLB.has_child('View.extend_theme') ) { SLB.View.extend_theme('slb_baseline',{"name":"Baseline","parent":"","styles":[{"handle":"base","uri":"http:\/\/classics.case.edu\/wp-content\/plugins\/simple-lightbox\/themes\/baseline\/css\/style.css","deps":[]}],"layout_raw":"<div class=\"slb_container\"><div class=\"slb_content\">{{item.content}}<div class=\"slb_nav\"><span class=\"slb_prev\">{{ui.nav_prev}}<\/span><span class=\"slb_next\">{{ui.nav_next}}<\/span><\/div><div class=\"slb_controls\"><span class=\"slb_close\">{{ui.close}}<\/span><span class=\"slb_slideshow\">{{ui.slideshow_control}}<\/span><\/div><div class=\"slb_loading\">{{ui.loading}}<\/div><\/div><div class=\"slb_details\"><div class=\"inner\"><div class=\"slb_data\"><div class=\"slb_data_content\"><span class=\"slb_data_title\">{{item.title}}<\/span><span class=\"slb_group_status\">{{ui.group_status}}<\/span><div class=\"slb_data_desc\">{{item.description}}<\/div><\/div><\/div><div class=\"slb_nav\"><span class=\"slb_prev\">{{ui.nav_prev}}<\/span><span class=\"slb_next\">{{ui.nav_next}}<\/span><\/div><\/div><\/div><\/div>"}); }if ( !!window.SLB && SLB.has_child('View.extend_theme') ) { SLB.View.extend_theme('slb_default',{"name":"Default (Light)","parent":"slb_baseline","styles":[{"handle":"font","uri":"http:\/\/fonts.googleapis.com\/css?family=Yanone+Kaffeesatz","deps":[]},{"handle":"base","uri":"http:\/\/classics.case.edu\/wp-content\/plugins\/simple-lightbox\/themes\/default\/css\/style.css","deps":[]}]}); }})})(jQuery);}/* ]]> */</script>
+<script type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+
+	<script src="http://stats.wp.com/e-201449.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:3.1.1',blog:'75608445',post:'403',tz:'0'});
+	var load_cmc = function(){linktracker_init(75608445,403,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script></body>
+</html>
