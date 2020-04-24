@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Python 3 script template (changeme)
+Clean up what I got from Case
 """
 
-import better_exceptions
 from airtight.cli import configure_commandline
+from bs4 import BeautifulSoup
 import logging
 
 logger = logging.getLogger(__name__)
