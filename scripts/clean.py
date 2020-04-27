@@ -6,12 +6,17 @@ Clean up what I got from Case
 
 from airtight.cli import configure_commandline
 from bs4 import BeautifulSoup
+from difflib import SequenceMatcher
 import logging
 from os import walk
 from pathlib import Path
+from shutil import copyfile
+import re
+import sys
 
 dryrun = False
 logger = logging.getLogger(__name__)
+rx = re.compile(r'\s+')
 
 DEFAULT_LOG_LEVEL = logging.WARNING
 OPTIONAL_ARGUMENTS = [
@@ -31,6 +36,78 @@ POSITIONAL_ARGUMENTS = [
 ]
 
 
+def notifier(context_str, logger):
+    global rx
+
+    maxlen = 130
+    notice = rx.sub(' ', context_str.replace('\n', ' ')).strip().split()
+    for i in range(0, len(notice)):
+        if len(' '.join(notice[0:i])) >= maxlen:
+            break
+    while len(' '.join(notice[0:i])) > maxlen:
+        i = i - 1
+    suffix = ''
+    if i < len(notice):
+        suffix = ' ... '
+    notice = ' '.join(notice[0:i]) + suffix
+    logger.debug(
+        ' REMOVING: {}'.format(notice))
+
+
+def clean(filepath: Path):
+    global dryrun
+
+    logger = logging.getLogger(sys._getframe().f_code.co_name)
+    logger.info(' FILE TO CLEAN: {}'.format(filepath))
+    backpath = filepath.parent / (filepath.name + '.bak')
+    logger.debug(' BACKUP FILE: {}'.format(backpath))
+    if not dryrun:
+        copyfile(filepath, backpath)
+    with open(filepath, 'r', encoding='utf-8') as fp:
+        soup = BeautifulSoup(fp, 'lxml')
+    del fp
+    orig_html = soup.prettify()
+    bad_tags = [
+        'script', 'style'
+    ]
+    for tag in bad_tags:
+        for ele in soup.select(tag):
+            if dryrun:
+                notifier(str(ele), logger)
+            ele.decompose()
+    bad_tags_attrs = {
+        'meta': {
+            'http-equiv': ['X-UA-Compatible'],
+            'name': ['viewport', 'generator']
+        },
+        'div': {
+            'id': [
+                'cas-top-slider-panel', 'cas-top-bar', 'cas-department-menu',
+                'cas-mobile-top-bar', 'cas-mobile-menu-slider-toggle',
+                'cas-mobile-department-menu', 'cas-footer'
+            ]
+        }
+    }
+    for bad_tag, bad_attrs in bad_tags_attrs.items():
+        for attr, attr_vals in bad_attrs.items():
+            for attr_val in attr_vals:
+                junk = soup.find_all(bad_tag, {attr: attr_val})
+                for ele in junk:
+                    if dryrun:
+                        notifier(str(ele), logger)
+                    ele.decompose()
+    new_html = soup.prettify()
+    s = SequenceMatcher(a=orig_html, b=new_html)
+    r = s.real_quick_ratio()
+    logger.info(
+        'delta {}: {}%'.format(
+            filepath.name,
+            round(100.0 * (1.0 - r))))
+    with open(filepath, 'w', encoding='utf-8') as fp:
+        fp.write(new_html)
+    del fp
+
+
 def main(**kwargs):
     """
     main function
@@ -38,9 +115,19 @@ def main(**kwargs):
     # logger = logging.getLogger(sys._getframe().f_code.co_name)
     global dryrun
     dryrun = kwargs['dryrun']
+    if dryrun:
+        logger.info(' DRY RUN: no files will be changed.')
     where = Path(kwargs['where']).resolve()
-    logger.debug('where: {}'.format(where))
-    #for root, dirs, files in os.walk():
+    logger.info(' WHERE: {}'.format(where))
+    for root, dirs, files in walk(where):
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        try:
+            dirs.remove('scripts')
+        except ValueError:
+            pass
+        for fn in files:
+            if fn.endswith('.html'):
+                clean(Path(root) / fn)
 
 
 if __name__ == "__main__":
