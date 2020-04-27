@@ -174,6 +174,17 @@ def clean(filepath: Path):
         ele.replace_with(new_tag)
         new_tag.string = title
 
+    # unwrap containers
+    layers = ['div.span12', 'div.row', 'div.container']
+    
+    for i, tag_class in enumerate(layers):
+        selector = 'body'
+        for j in range(len(layers), i, -1):
+            selector += ' > {}'.format(layers[j-1])
+        elements = soup.select(selector)
+        for ele in elements:
+            ele.unwrap()
+
     # save result to file
     new_html = soup.prettify()
     s = SequenceMatcher(a=orig_html, b=new_html)
@@ -186,6 +197,8 @@ def clean(filepath: Path):
         with open(filepath, 'w', encoding='utf-8') as fp:
             fp.write(new_html)
         del fp
+    raise ValueError('wombat')
+
 
 
 def main(**kwargs):
