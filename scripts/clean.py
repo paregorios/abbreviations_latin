@@ -114,7 +114,8 @@ def clean(filepath: Path):
                 'cas-top-slider-panel', 'cas-top-bar', 'cas-department-menu',
                 'cas-mobile-top-bar', 'cas-mobile-menu-slider-toggle',
                 'cas-mobile-department-menu', 'cas-footer'
-            ]
+            ],
+            'class': ['navigation']
         }
     }
     for bad_tag, bad_attrs in bad_tags_attrs.items():
