@@ -54,6 +54,14 @@ def notifier(context_str, logger):
         ' REMOVING: {}'.format(notice))
 
 
+def clean_links(soup):
+    for ele in soup.select('a'):
+        if not ele['href'].startswith('pop'):
+            if not ele['href'].startswith('noref'):
+                raise ValueError(str(ele))
+    return soup
+
+
 def clean(filepath: Path):
     global dryrun
 
@@ -67,6 +75,8 @@ def clean(filepath: Path):
         soup = BeautifulSoup(fp, 'lxml')
     del fp
     orig_html = soup.prettify()
+
+    # strip out all tags that we don't need at all
     bad_tags = [
         'script', 'style'
     ]
@@ -75,6 +85,8 @@ def clean(filepath: Path):
             if dryrun:
                 notifier(str(ele), logger)
             ele.decompose()
+
+    # strip out tag + attribute combinations that we don't want
     bad_tags_attrs = {
         'meta': {
             'http-equiv': ['X-UA-Compatible'],
@@ -96,6 +108,20 @@ def clean(filepath: Path):
                     if dryrun:
                         notifier(str(ele), logger)
                     ele.decompose()
+    
+    # strip out complicated structure that we don't want
+    ele = soup.find('div', {'id': 'cas-breadcrumbs'})
+    if ele is None:
+        raise RuntimeError('foo')
+    ele = ele.find_parent('div', {'class': 'container'})
+    if ele is None:
+        raise RuntimeError('bar')
+    if dryrun:
+        notifier(str(ele), logger)
+    ele.decompose()
+
+    # fix or strip out undesireable links that didn't get removed in previous code
+    soup = clean_links(soup)
     new_html = soup.prettify()
     s = SequenceMatcher(a=orig_html, b=new_html)
     r = s.real_quick_ratio()
