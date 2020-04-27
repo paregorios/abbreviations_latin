@@ -197,7 +197,6 @@ def clean(filepath: Path):
         with open(filepath, 'w', encoding='utf-8') as fp:
             fp.write(new_html)
         del fp
-    raise ValueError('wombat')
 
 
 
