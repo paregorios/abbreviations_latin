@@ -161,6 +161,20 @@ def clean(filepath: Path):
 
     # fix or strip out undesireable links that didn't get removed in previous code
     soup = clean_links(soup)
+
+    # remove Case postfix from page title
+    ele = soup.find('title')
+    title = str(ele.string)
+    if '| Department of Classics' in title:
+        title = title.replace('| Department of Classics', '').strip()
+        logger.debug('replacing title string "{}" with "{}"'.format(
+            ele.string, title
+        ))
+        new_tag = soup.new_tag('title')
+        ele.replace_with(new_tag)
+        new_tag.string = title
+
+    # save result to file
     new_html = soup.prettify()
     s = SequenceMatcher(a=orig_html, b=new_html)
     r = s.real_quick_ratio()
@@ -172,6 +186,7 @@ def clean(filepath: Path):
         with open(filepath, 'w', encoding='utf-8') as fp:
             fp.write(new_html)
         del fp
+
 
 def main(**kwargs):
     """
