@@ -5,7 +5,7 @@ Clean up what I got from Case
 """
 
 from airtight.cli import configure_commandline
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString
 from difflib import SequenceMatcher
 import logging
 from os import walk
@@ -56,10 +56,29 @@ def notifier(context_str, logger):
 
 def clean_links(soup):
     for ele in soup.select('a'):
-        if not ele['href'].startswith('pop'):
+        if ele['href'] == '../index.html':
+            pass
+        elif ele['href'] == 'http://www.rz.uni-frankfurt.de/~clauss/':
+            pass
+        elif ele['href'] == 'index.html#methods':
+            pass
+        elif ele['href'] == 'http://classics.case.edu/asgle/abbrev/latin/#limitations':
+            ele['href'] = '#limitations'
+        elif 'mailto:tom_elliott@unc.edu' in ele['href']:
+            ele['href'] = 'mailto:ipse@paregorios.org?subject=Abbreviations in Latin Inscriptions'
+            ele.string.replace_with('ipse@paregorios.org')
+        elif not ele['href'].startswith('pop'):
             if not ele['href'].startswith('noref'):
-                raise ValueError(str(ele))
+                if ele['href'].startswith('http://classicsstaging.case.edu/noref'):
+                    ele['href'] = ele['href'].replace('http://classicsstaging.case.edu/', '')
+                else:
+                    raise ValueError(str(ele))
     return soup
+
+
+def out_vile_jelly(ele):
+    notifier(str(ele), logger)
+    ele.decompose()
 
 
 def clean(filepath: Path):
@@ -82,9 +101,7 @@ def clean(filepath: Path):
     ]
     for tag in bad_tags:
         for ele in soup.select(tag):
-            if dryrun:
-                notifier(str(ele), logger)
-            ele.decompose()
+            out_vile_jelly(ele)
 
     # strip out tag + attribute combinations that we don't want
     bad_tags_attrs = {
@@ -105,10 +122,8 @@ def clean(filepath: Path):
             for attr_val in attr_vals:
                 junk = soup.find_all(bad_tag, {attr: attr_val})
                 for ele in junk:
-                    if dryrun:
-                        notifier(str(ele), logger)
-                    ele.decompose()
-    
+                    out_vile_jelly(ele)
+
     # strip out complicated structure that we don't want
     ele = soup.find('div', {'id': 'cas-breadcrumbs'})
     if ele is None:
@@ -116,9 +131,27 @@ def clean(filepath: Path):
     ele = ele.find_parent('div', {'class': 'container'})
     if ele is None:
         raise RuntimeError('bar')
-    if dryrun:
-        notifier(str(ele), logger)
-    ele.decompose()
+    out_vile_jelly(ele)
+    ele = soup.find('ul', {'id': 'cas-left-navigation'})
+    if ele is None:
+        logger.warning('Did not find "cas-left-navigation"')
+    else:
+        out_vile_jelly(ele.parent)
+
+    elements = soup.find_all('a')
+    jellies = []
+    for ele in elements:
+        try:
+            ele['href']
+        except TypeError:
+            raise RuntimeError(ele)
+        if 'asgle-logo.gif' in ele['href']:
+            if ele.parent.name == 'p':
+                jellies.append(ele.parent)
+            else:
+                raise RuntimeError('vorpal rabbit')
+    for jelly in jellies:
+        out_vile_jelly(jelly)
 
     # fix or strip out undesireable links that didn't get removed in previous code
     soup = clean_links(soup)
@@ -129,9 +162,10 @@ def clean(filepath: Path):
         'delta {}: {}%'.format(
             filepath.name,
             round(100.0 * (1.0 - r))))
-    with open(filepath, 'w', encoding='utf-8') as fp:
-        fp.write(new_html)
-    del fp
+    if not dryrun:
+        with open(filepath, 'w', encoding='utf-8') as fp:
+            fp.write(new_html)
+        del fp
 
 
 def main(**kwargs):
