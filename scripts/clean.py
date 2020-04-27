@@ -5,7 +5,7 @@ Clean up what I got from Case
 """
 
 from airtight.cli import configure_commandline
-from bs4 import BeautifulSoup, NavigableString
+from bs4 import BeautifulSoup, NavigableString, Comment
 from difflib import SequenceMatcher
 import logging
 from os import walk
@@ -95,6 +95,11 @@ def clean(filepath: Path):
     del fp
     orig_html = soup.prettify()
 
+    # get rid of comments
+    comments = soup.findAll(text=lambda text:isinstance(text, Comment))
+    for comment in comments:
+        comment.extract()
+
     # strip out all tags that we don't need at all
     bad_tags = [
         'script', 'style'
@@ -167,7 +172,6 @@ def clean(filepath: Path):
         with open(filepath, 'w', encoding='utf-8') as fp:
             fp.write(new_html)
         del fp
-
 
 def main(**kwargs):
     """
