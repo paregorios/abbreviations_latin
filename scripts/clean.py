@@ -93,7 +93,7 @@ def clean(filepath: Path):
     with open(filepath, 'r', encoding='utf-8') as fp:
         soup = BeautifulSoup(fp, 'lxml')
     del fp
-    orig_html = soup.prettify()
+    orig_html = str(soup)
 
     # get rid of comments
     comments = soup.findAll(text=lambda text:isinstance(text, Comment))
@@ -185,7 +185,7 @@ def clean(filepath: Path):
             ele.unwrap()
 
     # save result to file
-    new_html = soup.prettify()
+    new_html = soup.smooth()
     s = SequenceMatcher(a=orig_html, b=new_html)
     r = s.real_quick_ratio()
     logger.info(
@@ -196,7 +196,6 @@ def clean(filepath: Path):
         with open(filepath, 'w', encoding='utf-8') as fp:
             fp.write(new_html)
         del fp
-
 
 
 def main(**kwargs):
