@@ -193,8 +193,19 @@ def clean(filepath: Path):
         for ele in soup.select('*[{}]'.format(attr)):
             del ele[attr]
 
-    # save result to file
+    # collapse whitespace
     soup.smooth()
+    for ns in soup.strings:
+        normed = normalize_space(ns)
+        if ns == normed:
+            continue
+        if normed == ' ':
+            if '\n' in ns:
+                normed = '\n'
+        ns.replace_with(normed)
+    soup.smooth()
+
+    # save result to file
     new_html = str(soup)
     s = SequenceMatcher(a=orig_html, b=new_html)
     r = s.real_quick_ratio()
