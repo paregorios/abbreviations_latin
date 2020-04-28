@@ -66,8 +66,7 @@ def clean_links(soup):
         elif ele['href'] == 'http://classics.case.edu/asgle/abbrev/latin/#limitations':
             ele['href'] = '#limitations'
         elif 'mailto:tom_elliott@unc.edu' in ele['href']:
-            ele['href'] = 'mailto:ipse@paregorios.org?subject=Abbreviations in Latin Inscriptions'
-            ele.string.replace_with('ipse@paregorios.org')
+            pass
         elif not ele['href'].startswith('pop'):
             if not ele['href'].startswith('noref'):
                 if ele['href'].startswith('http://classicsstaging.case.edu/noref'):
