@@ -174,9 +174,8 @@ def clean(filepath: Path):
         ele.replace_with(new_tag)
         new_tag.string = title
 
-    # unwrap containers
-    layers = ['div.span12', 'div.row', 'div.container']
-    
+    # unwrap container/formatting divs
+    layers = ['div', 'div.row', 'div.container']
     for i, tag_class in enumerate(layers):
         selector = 'body'
         for j in range(len(layers), i, -1):
