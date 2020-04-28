@@ -1,3 +1,5 @@
 lxml
 beautifulsoup4
 airtight
+-e git://github.com/isawnyu/textnorm.git#egg=textnorm
+
