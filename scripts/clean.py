@@ -201,6 +201,10 @@ def clean(filepath: Path):
             continue
         if normed == ' ':
             if '\n' in ns:
+                if isinstance(ns.previous_sibling, NavigableString):
+                    if '\n' in ns.previous_sibling:
+                        ns.extract()
+                        continue
                 normed = '\n'
         ns.replace_with(normed)
     soup.smooth()
