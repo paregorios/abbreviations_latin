@@ -13,6 +13,7 @@ from pathlib import Path
 from shutil import copyfile
 import re
 import sys
+from textnorm import normalize_space
 
 dryrun = False
 logger = logging.getLogger(__name__)
@@ -183,6 +184,15 @@ def clean(filepath: Path):
         elements = soup.select(selector)
         for ele in elements:
             ele.unwrap()
+
+    # get rid of hard line breaks
+    for ele in soup.find_all('br'):
+        ele.decompose()
+
+    # get rid of undesireable attributes entirely
+    for attr in ['style', 'border', 'valign']:
+        for ele in soup.select('*[{}]'.format(attr)):
+            del ele[attr]
 
     # save result to file
     soup.smooth()
