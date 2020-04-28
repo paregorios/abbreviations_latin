@@ -199,10 +199,10 @@ def clean(filepath: Path):
         normed = normalize_space(ns)
         if ns == normed:
             continue
-        if normed == ' ':
+        if normed == '':
             if '\n' in ns:
-                if isinstance(ns.previous_sibling, NavigableString):
-                    if '\n' in ns.previous_sibling:
+                if isinstance(ns.next_element, NavigableString):
+                    if '\n' in ns.next_element:
                         ns.extract()
                         continue
                 normed = '\n'
