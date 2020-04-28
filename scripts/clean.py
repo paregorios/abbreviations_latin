@@ -185,7 +185,8 @@ def clean(filepath: Path):
             ele.unwrap()
 
     # save result to file
-    new_html = soup.smooth()
+    soup.smooth()
+    new_html = str(soup)
     s = SequenceMatcher(a=orig_html, b=new_html)
     r = s.real_quick_ratio()
     logger.info(
