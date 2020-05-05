@@ -193,20 +193,7 @@ def clean(filepath: Path):
         for ele in soup.select('*[{}]'.format(attr)):
             del ele[attr]
 
-    # collapse whitespace
-    soup.smooth()
-    for ns in soup.strings:
-        normed = normalize_space(ns)
-        if ns == normed:
-            continue
-        if normed == '':
-            if '\n' in ns:
-                if isinstance(ns.next_element, NavigableString):
-                    if '\n' in ns.next_element:
-                        ns.extract()
-                        continue
-                normed = '\n'
-        ns.replace_with(normed)
+    # clean up whitespace
     soup.smooth()
 
     # save result to file
